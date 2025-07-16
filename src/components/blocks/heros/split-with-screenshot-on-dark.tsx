@@ -139,7 +139,7 @@ export default function SplitWithScreenshotOnDark() {
                 playsInline
                 className="w-full h-auto rounded-2xl bg-[#262626]/50 shadow-2xl ring-1 ring-[#f5f5f5]/20 backdrop-blur-sm"
               >
-                <source src="/rebel-audio-sizzle.mp4" type="video/mp4" />
+                <source src="https://www.dropbox.com/scl/fi/2zya7gqbnlz3supd91ux0/Rebel-Audio-Website-Sizzle_WC1.mp4?rlkey=vy7zoqbo41pryqwcxg68upklw&e=1&st=ldmg6tci&dl=1" type="video/mp4" />
                 {/* Fallback placeholder */}
                 <div className="w-full aspect-video bg-gradient-to-br from-[#262626] to-[#1a1a1a] rounded-2xl flex items-center justify-center">
                   <div className="text-center">
