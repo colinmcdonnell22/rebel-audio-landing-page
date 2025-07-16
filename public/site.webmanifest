@@ -1,0 +1,30 @@
+{
+  "name": "Rebel Audio - Social Podcasting Platform",
+  "short_name": "Rebel Audio",
+  "description": "Transform your podcast episodes into viral social content automatically",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#1a1a1a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": [
+    "productivity",
+    "social",
+    "audio"
+  ],
+  "lang": "en",
+  "dir": "ltr"
+} 

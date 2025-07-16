@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #1a1a1a; /* Primary color from design system */
+  --color-foreground: #f5f5f5; /* Secondary color from design system */
+
+  --color-card: #1a1a1a;
+  --color-card-foreground: #f5f5f5;
+
+  --color-popover: #1a1a1a;
+  --color-popover-foreground: #f5f5f5;
+
+  --color-primary: #f5f5f5; /* Used for CTAs, text, highlights */
+  --color-primary-foreground: #1a1a1a;
+
+  --color-secondary: #262626; /* Slightly lighter dark for secondary elements */
+  --color-secondary-foreground: #f5f5f5;
+
+  --color-muted: #262626;
+  --color-muted-foreground: #a3a3a3;
+
+  --color-accent: #f5f5f5; /* Highlights and interactive elements */
+  --color-accent-foreground: #1a1a1a;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+
+  --color-border: #404040; /* Darker border for contrast */
+  --color-input: #262626;
+  --color-ring: #f5f5f5;
+
+  --color-chart-1: #e67e22;
+  --color-chart-2: #2d8659;
+  --color-chart-3: #1e3a5f;
+  --color-chart-4: #f1c40f;
+  --color-chart-5: #e74c3c;
+
+  --color-sidebar: #1a1a1a;
+  --color-sidebar-foreground: #f5f5f5;
+  --color-sidebar-primary: #f5f5f5;
+  --color-sidebar-primary-foreground: #1a1a1a;
+  --color-sidebar-accent: #262626;
+  --color-sidebar-accent-foreground: #f5f5f5;
+  --color-sidebar-border: #404040;
+  --color-sidebar-ring: #f5f5f5;
+
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  /* Custom font tokens */
+  --font-display: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border); /* Referencing token */
+  }
+}
+
+@layer utilities {
+  body {
+    font-family: var(--font-body); /* Referencing token */
+  }
+}
+
+@layer base {
+  :root {
+    --background: var(--color-background); /* Referencing token */
+    --foreground: var(--color-foreground); /* Referencing token */
+    --card: var(--color-card); /* Referencing token */
+    --card-foreground: var(--color-card-foreground); /* Referencing token */
+    --popover: var(--color-popover); /* Referencing token */
+    --popover-foreground: var(--color-popover-foreground); /* Referencing token */
+    --primary: var(--color-primary); /* Referencing token */
+    --primary-foreground: var(--color-primary-foreground); /* Referencing token */
+    --secondary: var(--color-secondary); /* Referencing token */
+    --secondary-foreground: var(--color-secondary-foreground); /* Referencing token */
+    --muted: var(--color-muted); /* Referencing token */
+    --muted-foreground: var(--color-muted-foreground); /* Referencing token */
+    --accent: var(--color-accent); /* Referencing token */
+    --accent-foreground: var(--color-accent-foreground); /* Referencing token */
+    --destructive: var(--color-destructive); /* Referencing token */
+    --destructive-foreground: var(--color-destructive-foreground); /* Referencing token */
+    --border: var(--color-border); /* Referencing token */
+    --input: var(--color-input); /* Referencing token */
+    --ring: var(--color-ring); /* Referencing token */
+    --chart-1: var(--color-chart-1); /* Referencing token */
+    --chart-2: var(--color-chart-2); /* Referencing token */
+    --chart-3: var(--color-chart-3); /* Referencing token */
+    --chart-4: var(--color-chart-4); /* Referencing token */
+    --chart-5: var(--color-chart-5); /* Referencing token */
+    --radius: var(--radius-md); /* Referencing token */
+    --sidebar-background: var(--color-sidebar); /* Referencing token */
+    --sidebar-foreground: var(--color-sidebar-foreground); /* Referencing token */
+    --sidebar-primary: var(--color-sidebar-primary); /* Referencing token */
+    --sidebar-primary-foreground: var(--color-sidebar-primary-foreground); /* Referencing token */
+    --sidebar-accent: var(--color-sidebar-accent); /* Referencing token */
+    --sidebar-accent-foreground: var(--color-sidebar-accent-foreground); /* Referencing token */
+    --sidebar-border: var(--color-sidebar-border); /* Referencing token */
+    --sidebar-ring: var(--color-sidebar-ring); /* Referencing token */
+  }
+
+  /* No explicit dark mode is defined, so stick with the single theme */
+}
+
+@layer base {
+  * {
+    border-color: var(--border); /* Referencing token */
+  }
+  body {
+    background-color: var(--background); /* Referencing token */
+    color: var(--foreground); /* Referencing token */
+    font-family: var(--font-body); /* Referencing token */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display); /* Referencing token */
+    color: var(--foreground); /* Ensure headings use foreground color */
+  }
+  a {
+    color: var(--accent); /* Default link color for accents */
+    text-decoration: none;
+  }
+  a:hover {
+    opacity: 0.8;
+  }
+  p {
+    line-height: 1.6;
+  }
+}
